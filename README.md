@@ -44,22 +44,3 @@ Pull the latest published image with:
 docker pull YOUR_DOCKERHUB_USERNAME/nodejs-demo-app:latest
 docker run --rm -p 3000:3000 YOUR_DOCKERHUB_USERNAME/nodejs-demo-app:latest
 ```
-
-## Submission checklist
-
-- Create a new GitHub repository named `nodejs-demo-app`.
-- Upload or push all files in this folder.
-- Add the two Docker Hub secrets above.
-- Push to `main` and confirm the workflow completes in the repository's **Actions** tab.
-- Include the GitHub repository link in your task submission form.
-
-## Interview question notes
-
-- **CI/CD:** Continuous Integration automatically validates code changes; Continuous Delivery/Deployment automates preparing or releasing validated changes.
-- **GitHub Actions:** GitHub's workflow automation service reads YAML files under `.github/workflows` and runs configured jobs on events.
-- **Runner:** The machine (hosted by GitHub or self-hosted) that executes a workflow job.
-- **Jobs and steps:** Jobs run on runners and can depend on other jobs; steps run sequentially inside a job.
-- **Secrets:** Store credentials as GitHub Actions secrets and reference them with the `secrets` context; never print or hard-code them.
-- **Deployment errors:** Check the failed job and logs, fix the cause, rerun; test before publishing and keep commit-SHA tags for traceable rollbacks.
-- **Docker build-push workflow:** Authenticate to Docker Hub, build from the Dockerfile, then push tagged images to the registry.
-- **Local pipeline testing:** Run `npm test` and `docker build` locally; tools such as `act` can simulate many GitHub Actions workflows, though hosted-runner behavior can differ.
